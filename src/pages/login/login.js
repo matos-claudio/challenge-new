@@ -6,36 +6,49 @@ import {
   Image,
   TouchableOpacity,
   Alert,
+  ActivityIndicator,
 } from 'react-native';
 import {Container, Content, Form, Input, Label} from 'native-base';
+import {connect} from 'react-redux';
 import style from '../../../styles/style';
-import {
-  CONST_EMAIL,
-  CONST_PASSWORD,
-  MSG_ERROR_LOGIN,
-} from '../../utils/constants';
+import {MSG_ERROR_LOGIN} from '../../utils/constants';
+import {authData} from '../../store/action/auth/action-auth';
+import AuthController from '../../controllers/auth/auth-controller';
 
 const LOGO_ENCOMENDA = require('../../../assets/logo-encomenda.png');
 const LOGO_ACESSE = require('../../../assets/logo-access.png');
 
-export default class Login extends Component {
+class Login extends Component {
   constructor() {
     super();
     this.state = {
       email: 'testador@mail.com',
       password: 'admin123',
+      isLoading: false,
     };
+    this.authController = new AuthController();
   }
 
-  login = () => {
-    if (
-      this.state.email === CONST_EMAIL &&
-      this.state.password === CONST_PASSWORD
-    ) {
+  login = async () => {
+    this.setLoading(true);
+    const data = {email: this.state.email, password: this.state.password};
+    const authResponse = await this.authController.mobileLogin(data);
+    this.setLoading(false);
+    if (!authResponse.hasError) {
+      this.setAuthData(authResponse);
       this.props.navigation.navigate('Menu');
     } else {
       Alert.alert('Ops :(', MSG_ERROR_LOGIN);
     }
+  };
+
+  setAuthData = (data) => {
+    const dataUserLogged = {data};
+    this.props.onLogin(dataUserLogged);
+  };
+
+  setLoading = (isLoading) => {
+    this.setState({isLoading});
   };
 
   render() {
@@ -75,7 +88,10 @@ export default class Login extends Component {
               <TouchableOpacity
                 style={style.loginButton}
                 onPress={() => this.login()}>
-                <Text style={style.buttonLabelLogin}>Entrar</Text>
+                {!this.state.isLoading && (
+                  <Text style={style.buttonLabelLogin}>Entrar</Text>
+                )}
+                {this.state.isLoading && <ActivityIndicator color="#fff" />}
               </TouchableOpacity>
               <TouchableOpacity style={style.buttonPasswordRecover}>
                 <Text style={style.buttonLabelRecover}>Esqueceu a senha?</Text>
@@ -95,3 +111,9 @@ export default class Login extends Component {
     );
   }
 }
+
+const mapDispatchToProps = (dispatch) => {
+  return {onLogin: (user) => dispatch(authData(user))};
+};
+
+export default connect(null, mapDispatchToProps)(Login);

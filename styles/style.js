@@ -1,6 +1,11 @@
 import {Platform, StyleSheet} from 'react-native';
 
 const style = StyleSheet.create({
+  container: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
   containerFlex1: {
     flex: 1,
   },
@@ -109,6 +114,21 @@ const style = StyleSheet.create({
     height: 2,
     width: '100%',
     backgroundColor: '#156BA5',
+  },
+  viewLoading: {
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  loadingLabel: {
+    color: '#9e9e9e',
+    fontSize: 16,
+    marginTop: 5,
+  },
+  picker: {
+    width: '100%',
+    // height: 45,
+    marginTop: 10,
+    backgroundColor: '#f5f5f5',
   },
 });
 export default style;
