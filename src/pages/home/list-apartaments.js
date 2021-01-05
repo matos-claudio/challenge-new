@@ -1,6 +1,6 @@
 import {Container, Content, Picker} from 'native-base';
 import React, {Component} from 'react';
-import {Text, View} from 'react-native';
+import {View} from 'react-native';
 import {connect} from 'react-redux';
 import HeaderDrawerComponent from '../../components/header/header-drawer-component';
 import style from '../../../styles/style';
@@ -31,7 +31,7 @@ class ListApartaments extends Component {
                 })
               }>
               {this.props.user.condominium.blocks.map((b) => (
-                <Picker.Item label={b.name} value={b.id} />
+                <Picker.Item key={b.id} label={b.name} value={b.id} />
               ))}
             </Picker>
           </View>
