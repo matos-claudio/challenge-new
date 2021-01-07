@@ -12,19 +12,20 @@ import {
 import style from '../../../styles/style';
 import UserDataComponent from '../../components/user/user-data-component';
 import {LogoComponent} from '../../components/logo/logo-component';
+import {connect} from 'react-redux';
 
 const ICON_MESSAGES = require('../../../assets/paper.png');
 const ICON_FLAT = require('../../../assets/flat.png');
 const ICON_GROUP = require('../../../assets/group.png');
 const ICON_LOGOUT = require('../../../assets/logout.png');
 
-export default class SideBar extends Component {
+class SideBar extends Component {
   render() {
     return (
       <Container>
         <Content>
           <LogoComponent />
-          <UserDataComponent />
+          <UserDataComponent user={this.props.user} />
           <List>
             <ListItem thumbnail noBorder>
               <Left>
@@ -84,3 +85,12 @@ export default class SideBar extends Component {
     );
   }
 }
+
+const mapStateToProps = ({authData}) => {
+  console.log(
+    `USER >>> ${JSON.stringify(authData.authData.data.response.data.user)}`,
+  );
+  return {user: authData.authData.data.response.data.user};
+};
+
+export default connect(mapStateToProps)(SideBar);

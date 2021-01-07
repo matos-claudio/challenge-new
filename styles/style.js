@@ -129,6 +129,135 @@ const style = StyleSheet.create({
     // height: 45,
     marginTop: 10,
     backgroundColor: '#f5f5f5',
+    borderWidth: 0.5,
+    borderColor: '#156BA5',
+  },
+  containerListApartaments: {
+    padding: 10,
+  },
+  viewCardBlock: {
+    justifyContent: 'space-evenly',
+    flex: 1,
+    alignItems: 'center',
+  },
+  cardBlock: {
+    width: 80,
+    height: 80,
+    // flex: 1,
+    // justifyContent: 'center',
+    // alignItems: 'center',
+    borderWidth: 3,
+    borderColor: '#156BA5',
+    borderRadius: 5,
+    // flexDirection: 'row',
+  },
+  viewAlignTextCardBlock: {
+    justifyContent: 'center',
+    flex: 1,
+    alignItems: 'center',
+    marginBottom: 10,
+  },
+  labelBlockNumber: {
+    color: '#156BA5',
+    fontSize: 22,
+    fontWeight: 'bold',
+  },
+  viewBullet: {
+    width: 12,
+    height: 12,
+    alignSelf: 'flex-end',
+    borderRadius: 25,
+  },
+  viewEmptyList: {
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+
+  // Modal
+  containerModal: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  viewSubcontainerModal: {
+    width: '90%',
+    height: 420,
+    minHeight: 420,
+    backgroundColor: '#fff',
+    shadowColor: '#000',
+    shadowOffset: {
+      width: 0,
+      height: 10,
+    },
+    shadowOpacity: 0.4,
+    shadowRadius: 60,
+    borderRadius: 15,
+    padding: 10,
+  },
+  viewNumberBlock: {
+    backgroundColor: '#b3e5fc',
+    alignItems: 'center',
+    justifyContent: 'center',
+    height: 45,
+    borderRadius: 10,
+    marginTop: 5,
+  },
+  viewBodyModal: {
+    justifyContent: 'space-between',
+    marginTop: 10,
+  },
+  viewResident: {
+    flexDirection: 'row',
+  },
+  labelModal: {
+    color: '#000',
+    fontWeight: 'bold',
+    fontSize: 16,
+  },
+  labelName: {
+    color: 'grey',
+    fontWeight: 'bold',
+    fontSize: 16,
+  },
+  viewMarginLeft10: {
+    marginLeft: 10,
+  },
+  viewMarginTop10: {
+    marginTop: 10,
+  },
+  textArea: {
+    borderWidth: 1,
+    borderColor: 'grey',
+    height: 160,
+    borderRadius: 10,
+    marginTop: 5,
+    padding: 10,
+    backgroundColor: '#fff8e1',
+  },
+  viewButtonModal: {
+    marginTop: 20,
+    alignItems: 'center',
+  },
+  buttonModal: {
+    backgroundColor: '#3BA620',
+    borderRadius: 20,
+    width: 250,
+    height: 50,
+  },
+  viewButtonOrganizer: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'center',
+    flex: 1,
+  },
+  iconSendButtonModal: {
+    width: 25,
+    height: 25,
+    marginRight: 10,
+  },
+  labelButtonModal: {
+    color: '#fff',
+    fontSize: 20,
   },
 });
 export default style;
