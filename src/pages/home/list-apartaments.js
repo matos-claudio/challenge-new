@@ -1,6 +1,7 @@
 import {Container, Content, Picker} from 'native-base';
 import React, {Component} from 'react';
 import {View} from 'react-native';
+// import {Picker} from '@react-native-community/picker';
 import {connect} from 'react-redux';
 import HeaderDrawerComponent from '../../components/header/header-drawer-component';
 import style from '../../../styles/style';
@@ -20,8 +21,8 @@ class ListApartaments extends Component {
         <Content contentContainerStyle={style.contentContainerStyle}>
           <View>
             <Picker
-              note
-              mode="dropdown"
+              // note
+              // mode="dropdown"
               style={style.picker}
               selectedValue={this.state.block}
               onValueChange={(itemValue, itemPosition) =>
