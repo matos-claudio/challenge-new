@@ -4,6 +4,7 @@ import {
   DEVICE_TOKEN,
   AUTH_MOBILE_LOGIN,
   CONDOMINIU_UNIT,
+  NOTICE,
 } from '../utils/constants';
 
 export default class ApiUtilServices extends ApiServiceConfig {
@@ -15,6 +16,10 @@ export default class ApiUtilServices extends ApiServiceConfig {
   listCondominium = ({condominium_id, block_id}) => {
     const url =
       SERVER_URL + CONDOMINIU_UNIT + `/${condominium_id}/${block_id}/unit`;
+    return this.getRequest(url);
+  };
+  listNotices = () => {
+    const url = SERVER_URL + NOTICE;
     return this.getRequest(url);
   };
 }

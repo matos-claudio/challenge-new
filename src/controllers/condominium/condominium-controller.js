@@ -15,4 +15,13 @@ export default class CondominiumController {
       return formatResponse(null, true);
     }
   };
+
+  listNotices = async () => {
+    try {
+      const noticeResponse = await this.apiUtilServices.listNotices();
+      return formatResponse(noticeResponse, false);
+    } catch (error) {
+      return formatResponse(null, true);
+    }
+  };
 }

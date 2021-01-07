@@ -66,7 +66,11 @@ class SideBar extends Component {
                 <Text>Moradores</Text>
               </Body>
             </ListItem>
-            <ListItem thumbnail noBorder>
+            {/* No Login, caso fosse APP para PROD, faria uma navegacao removendo toda a pilha de telas e destuindo os dados nos reducers */}
+            <ListItem
+              thumbnail
+              noBorder
+              onPress={() => this.props.navigation.navigate('Login')}>
               <Left>
                 <Thumbnail
                   square
@@ -87,9 +91,6 @@ class SideBar extends Component {
 }
 
 const mapStateToProps = ({authData}) => {
-  console.log(
-    `USER >>> ${JSON.stringify(authData.authData.data.response.data.user)}`,
-  );
   return {user: authData.authData.data.response.data.user};
 };
 

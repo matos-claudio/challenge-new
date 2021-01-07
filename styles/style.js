@@ -259,5 +259,77 @@ const style = StyleSheet.create({
     color: '#fff',
     fontSize: 20,
   },
+  viewButtonMessages: {
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  buttonMessages: {
+    backgroundColor: '#156BA5',
+    width: 300,
+    height: 70,
+    borderRadius: 20,
+  },
+  labelButtonMessages: {
+    color: '#fff',
+    marginLeft: 10,
+  },
+  viewBadge: {
+    position: 'absolute',
+    right: -10,
+    top: -10,
+    width: 30,
+    height: 30,
+    backgroundColor: 'red',
+    borderRadius: 20,
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  labelBadge: {
+    color: '#fff',
+    fontWeight: 'bold',
+  },
+
+  //Header
+  headerComponent: {
+    flexDirection: 'row',
+    minHeight: 10,
+    justifyContent: 'flex-start',
+    marginTop: Platform.OS === 'ios' ? 0 : 10,
+    padding: 15,
+    borderWidth: 0.5,
+    borderColor: '#156BA5',
+    borderRadius: 35,
+  },
+  safeAreaView: {
+    marginHorizontal: 10,
+  },
+  viewResults: {
+    backgroundColor: '#e0e0e0',
+    height: 40,
+    justifyContent: 'center',
+  },
+  labelResults: {
+    marginLeft: 10,
+    fontWeight: 'bold',
+    fontSize: 16,
+    color: '#424242',
+  },
+  viewListMessages: {
+    borderRadius: 10,
+    borderColor: '#e0e0e0',
+    borderWidth: 1,
+    padding: 10,
+    marginHorizontal: 5,
+    marginTop: 10,
+  },
+  labelListMessages: {
+    fontWeight: 'bold',
+    color: '#424242',
+    fontSize: 16,
+  },
+  labelNames: {
+    color: 'grey',
+    fontWeight: 'bold',
+  },
 });
 export default style;
