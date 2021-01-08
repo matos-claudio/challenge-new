@@ -6,7 +6,7 @@ import style from '../../../styles/style';
 const icon = require('../../../assets/menu.png');
 
 const HeaderDrawerComponent = ({navigate}) => (
-  <Header transparent>
+  <Header transparent style={style.justifyContentStart}>
     <Left style={style.rowOrientation}>
       <Button transparent onPress={() => navigate.openDrawer('DrawerOpen')}>
         <Image style={style.drawerIcon} source={icon} />

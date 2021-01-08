@@ -16,7 +16,7 @@ const routes = createStackNavigator(
       screen: ListMessages,
     },
   },
-  {headerMode: null},
+  {headerMode: 'none'},
 );
 
 const Routes = createAppContainer(routes);

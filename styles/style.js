@@ -9,6 +9,11 @@ const style = StyleSheet.create({
   containerFlex1: {
     flex: 1,
   },
+  menu: {
+    flex: 1,
+    marginTop: Platform.OS === 'ios' ? 0 : 10,
+    padding: 5,
+  },
   organizer: {
     justifyContent: 'space-around',
   },
@@ -84,6 +89,7 @@ const style = StyleSheet.create({
   },
   rowOrientation: {
     flexDirection: 'row',
+    flex: 1,
   },
   thumbnail: {
     tintColor: '#000',
@@ -181,8 +187,8 @@ const style = StyleSheet.create({
   },
   viewSubcontainerModal: {
     width: '90%',
-    height: 420,
-    minHeight: 420,
+    height: 450,
+    minHeight: 450,
     backgroundColor: '#fff',
     shadowColor: '#000',
     shadowOffset: {
@@ -193,6 +199,7 @@ const style = StyleSheet.create({
     shadowRadius: 60,
     borderRadius: 15,
     padding: 10,
+    elevation: 10,
   },
   viewNumberBlock: {
     backgroundColor: '#b3e5fc',
@@ -293,12 +300,12 @@ const style = StyleSheet.create({
   headerComponent: {
     flexDirection: 'row',
     minHeight: 10,
-    justifyContent: 'flex-start',
-    marginTop: Platform.OS === 'ios' ? 0 : 10,
-    padding: 15,
+    alignItems: 'center',
+    marginTop: Platform.OS === 'ios' ? 0 : 30,
+    // marginLeft: 5,
     borderWidth: 0.5,
     borderColor: '#156BA5',
-    borderRadius: 35,
+    borderRadius: 25,
   },
   safeAreaView: {
     marginHorizontal: 10,
@@ -330,6 +337,9 @@ const style = StyleSheet.create({
   labelNames: {
     color: 'grey',
     fontWeight: 'bold',
+  },
+  justifyContentStart: {
+    justifyContent: 'flex-start',
   },
 });
 export default style;

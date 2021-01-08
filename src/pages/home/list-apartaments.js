@@ -5,6 +5,7 @@ import {
   Dimensions,
   FlatList,
   Image,
+  StatusBar,
   TouchableOpacity,
   View,
 } from 'react-native';
@@ -111,6 +112,7 @@ class ListApartaments extends Component {
   render() {
     return (
       <Container>
+        <StatusBar barStyle={'dark-content'} backgroundColor={'#fff'} />
         <HeaderDrawerComponent navigate={this.props.navigation} />
         <PickerComponent
           onValueChange={(position) => this.listCondominium(position)}

@@ -54,7 +54,7 @@ class Login extends Component {
   render() {
     return (
       <Container>
-        <StatusBar barStyle="dark-content" />
+        <StatusBar barStyle="dark-content" backgroundColor={'#fff'} />
         <Content contentContainerStyle={style.contentContainerStyle}>
           <View style={[style.containerFlex1, style.viewLogo]}>
             <Image
